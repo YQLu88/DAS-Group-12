@@ -127,6 +127,8 @@ ggplot(data = coffee_data, aes(x = Qualityclass, y = aroma)) +
 
 ### Flavour
 
+This is the boxplot of the flavour variable.
+
 ``` r
 ggplot(data = coffee_data, aes(x = Qualityclass, y = flavor)) +
   geom_boxplot() +
@@ -306,7 +308,7 @@ summary()
 
         Null deviance: 1188.88  on 857  degrees of freedom
     Residual deviance:  426.01  on 818  degrees of freedom
-      (因为不存在，174个观察量被删除了)
+      (174 observations deleted due to missingness)
     AIC: 506.01
 
     Number of Fisher Scoring iterations: 17
@@ -346,7 +348,7 @@ summary()
 
         Null deviance: 1188.88  on 857  degrees of freedom
     Residual deviance:  516.51  on 851  degrees of freedom
-      (因为不存在，174个观察量被删除了)
+      (174 observations deleted due to missingness)
     AIC: 530.51
 
     Number of Fisher Scoring iterations: 7
@@ -384,7 +386,7 @@ summary()
 
         Null deviance: 1188.88  on 857  degrees of freedom
     Residual deviance:  516.75  on 852  degrees of freedom
-      (因为不存在，174个观察量被删除了)
+      (174 observations deleted due to missingness)
     AIC: 528.75
 
     Number of Fisher Scoring iterations: 7
@@ -422,7 +424,7 @@ summary()
 
         Null deviance: 1205.70  on 869  degrees of freedom
     Residual deviance:  523.68  on 865  degrees of freedom
-      (因为不存在，162个观察量被删除了)
+      (162 observations deleted due to missingness)
     AIC: 533.68
 
     Number of Fisher Scoring iterations: 7
@@ -519,7 +521,7 @@ mod.coffee3 %>% summary()
 
         Null deviance: 1188.88  on 857  degrees of freedom
     Residual deviance:  516.75  on 852  degrees of freedom
-      (因为不存在，174个观察量被删除了)
+      (174 observations deleted due to missingness)
     AIC: 528.75
 
     Number of Fisher Scoring iterations: 7
@@ -822,14 +824,14 @@ plot_model(mod.final, show.values = TRUE, transform = NULL,
 
 We interpret the odds ratios as follows:
 
--   for each increase in the aroma value of the coffee, their odds of
-    being good quality coffee increase (by a factor of 4.30),
+- for each increase in the aroma value of the coffee, their odds of
+  being good quality coffee increase (by a factor of 4.30),
 
--   for each increase in the flavor value of the coffee, their odds of
-    being good quality coffee increase (by a factor of 7,15),
+- for each increase in the flavor value of the coffee, their odds of
+  being good quality coffee increase (by a factor of 7,15),
 
--   the more acidic the coffee, their odds of being good quality coffee
-    increase (by a factor of 3.16),
+- the more acidic the coffee, their odds of being good quality coffee
+  increase (by a factor of 3.16),
 
 ``` r
 plot_model(mod.final, type = "pred", title = "Probability of coffee quality being good by three factors",
